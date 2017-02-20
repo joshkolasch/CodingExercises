@@ -15,7 +15,9 @@
  */
 package com.example.android.recyclerview;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -33,21 +35,44 @@ import android.widget.TextView;
  * contents are green.
  */
 // TODO (4) From GreenAdapter, extend RecyclerView.Adapter<NumberViewHolder>
-public class GreenAdapter {
+public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHolder>{
 
     // TODO (1) Add a private int variable called mNumberItems
-
+    private int mNumberItems;
     // TODO (2) Create a constructor for GreenAdapter that accepts an int as a parameter for numberOfItems
     // TODO (3) Store the numberOfItems parameter in mNumberItems
-
+    GreenAdapter(int numberOfItems){
+        mNumberItems = numberOfItems;
+    }
     // TODO (5) Override the onCreateViewHolder method
     // TODO (6) Create and return a new NumberViewHolder within this method
 
     // TODO (7) Override onBindViewHolder
     // TODO (8) Within onBindViewHolder, call holder.bind and pass in the position
 
-    // TODO (9) Override getItemCount and return the number of items to display
 
+    @Override
+    public NumberViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        Context context = parent.getContext();
+        int layoutIdForListItem = R.layout.number_list_item;
+        LayoutInflater inflater = LayoutInflater.from(context);
+        boolean shouldAttachToParentImmediately = false;
+
+        View view = inflater.inflate(layoutIdForListItem, parent, shouldAttachToParentImmediately);
+        NumberViewHolder nvh = new NumberViewHolder(view);
+        return nvh;
+    }
+
+    @Override
+    public void onBindViewHolder(NumberViewHolder holder, int position) {
+        holder.bind(position);
+    }
+
+    // TODO (9) Override getItemCount and return the number of items to display
+    @Override
+    public int getItemCount(){
+        return mNumberItems;
+    }
     /**
      * Cache of the children views for a list item.
      */
