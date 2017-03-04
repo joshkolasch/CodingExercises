@@ -15,27 +15,65 @@
      limitations under the License.
 -->
 <!-- TODO (1) Change the FrameLayout to a vertical LinearLayout -->
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="8dp">
 
     <!-- TODO (2) Remove the tv_display_weather TextView -->
     <!-- Text that describes the weather summary for a given day -->
+
+    <!-- TODO (3) Add a TextView for the selected day's date -->
     <TextView
-        android:id="@+id/tv_display_weather"
+        android:id="@+id/tv_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="22sp"
-        tools:text="Saturday, October 1 - Sunny - 78° / 63°"/>
-    <!-- TODO (3) Add a TextView for the selected day's date -->
+        />
     <!-- TODO (4) Add a TextView for the selected day's weather description -->
+    <TextView
+        android:id="@+id/tv_weather_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        />
     <!-- TODO (5) Add a TextView for the selected day's high temperature -->
+    <TextView
+        android:id="@+id/tv_high_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        />
     <!-- TODO (6) Add a TextView for the selected day's low temperature -->
+    <TextView
+        android:id="@+id/tv_low_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        />
     <!-- TODO (7) Add a TextView for the selected day's humidity -->
+    <TextView
+        android:id="@+id/tv_humidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        />
     <!-- TODO (8) Add a TextView for the selected day's pressure -->
+    <TextView
+        android:id="@+id/tv_pressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        />
     <!-- TODO (9) Add a TextView for the selected day's wind -->
+    <TextView
+        android:id="@+id/tv_wind_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        />
 
-</FrameLayout>
+</LinearLayout>
 
